@@ -4,9 +4,8 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = new Schema(
   {
     reactionId: {
-      type: String,
-      required: true,
-      max_length: 50,
+      type: Schema.Types.ObjectId,
+      default: new ObjectId
     },
     reactionBody: {
       type: String,
@@ -16,9 +15,16 @@ const reactionSchema = new Schema(
     username: {
       type: String,
       required: true,
+      ref: 'User'
+      //correct way ?
     },
     createdAt: {
         type: Date,
+        default: Date.now,
+        get: (date) => {
+            return date
+            //use moment or day.js to format the date 
+        }
     }
   },
   {
@@ -29,4 +35,5 @@ const reactionSchema = new Schema(
 
 const Reaction = model('reaction', reactionSchema);
 
+//if the notes say it is only a subdocument, my assumption is that it is not necessary to do the above line. Correct0? 
 module.exports = Reaction;

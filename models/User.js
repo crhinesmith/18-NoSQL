@@ -29,7 +29,7 @@ const userSchema = new Schema(
     ],
     friends: [
       {
-        //reference miniproject Course, under students
+       
         type: Schema.Types.ObjectId,
         ref: 'User',
       },

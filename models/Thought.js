@@ -7,17 +7,20 @@ const thoughtSchema = new Schema(
     thoughtText: {
       type: String,
       required: true,
-      
+      min: 1,
+      max: 280,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (date) => {
-            return date
-            //use moment or day.js to format the date 
-        }
-      },
+      type: Date,
+      default: Date.now,
+      get: (date) => {
+        return date
+        //use moment or day.js to format the date 
+      }
+    },
     username: {
+      type: String,
+      required: true,
     },
     reactions: [reactionSchema],
   },
