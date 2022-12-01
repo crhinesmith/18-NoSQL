@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const assignmentSchema = require('./Assignment');
+const reactionSchema = require('./Reaction');
 
 // Schema to create User model
 const thoughtSchema = new Schema(
@@ -10,13 +10,16 @@ const thoughtSchema = new Schema(
       
     },
     createdAt: {
-      type: String,
-      required: true,
-    },
+        type: Date,
+        default: Date.now,
+        get: (date) => {
+            return date
+            //use moment or day.js to format the date 
+        }
+      },
     username: {
     },
-    reactions: {
-    },
+    reactions: [reactionSchema],
   },
   {
     toJSON: {
@@ -25,6 +28,6 @@ const thoughtSchema = new Schema(
   }
 );
 
-const User = model('user', userSchema);
+const Thought = model('thought', thoughtSchema);
 
-module.exports = User;
+module.exports = Thought;
