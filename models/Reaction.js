@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema} = require('mongoose');
 
 // Schema to create Reaction model
 const reactionSchema = new Schema(
@@ -15,8 +15,6 @@ const reactionSchema = new Schema(
     username: {
       type: String,
       required: true,
-      ref: 'User'
-      //correct way ?
     },
     createdAt: {
         type: Date,
@@ -33,7 +31,5 @@ const reactionSchema = new Schema(
   }
 );
 
-const Reaction = model('reaction', reactionSchema);
 
-//if the notes say it is only a subdocument, my assumption is that it is not necessary to do the above line. Correct0? 
-module.exports = Reaction;
+module.exports = reactionSchema;
