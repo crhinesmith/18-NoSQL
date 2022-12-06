@@ -5,7 +5,7 @@ const reactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
-      default: new ObjectId
+      default: () => new Types.ObjectId(),
     },
     reactionBody: {
       type: String,
@@ -30,6 +30,7 @@ const reactionSchema = new Schema(
     toJSON: { getters: true, virtuals: true },
   }
 );
+
 
 
 module.exports = reactionSchema;
