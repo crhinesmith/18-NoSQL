@@ -34,6 +34,6 @@
   
 
   ## Questions
-  undefined
+
 
   If you have any questions about the repo, open an issue or contact me directly at crhinesmith5@gmail.com. You can find more of my work at [crhinesmith](https://github.com/crhinesmith/).
