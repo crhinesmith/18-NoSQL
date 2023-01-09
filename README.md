@@ -23,12 +23,15 @@
   ## Installation
   In the terminal of the server.js and type this command
 
-  npm install
-  This creates package.json file. Finally, create a .env folder that contains database's name, user, and password, an api key for sendgrid.
+      npm install
+  This creates package.json file. 
 
   ## Usage
-  In order to start the server, run the command 
+  In order to start the server, run the command
   
+      npm run start
+  
+  To interact with the database, users will need to install insomnia or another similar program. With this program the user can perform the CRUD (Create Read Update Delete) operations for both the user and thought models. 
   ## License
     This project is licensed under MIT
   ## Contributing
