@@ -21,9 +21,13 @@
   * [Questions](#questions)
 
   ## Installation
-  
+  In the terminal of the server.js and type this command
+
+  npm install
+  This creates package.json file. Finally, create a .env folder that contains database's name, user, and password, an api key for sendgrid.
 
   ## Usage
+  In order to start the server, run the command 
   
   ## License
     This project is licensed under MIT
